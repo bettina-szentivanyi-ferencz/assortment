@@ -5,3 +5,9 @@ where a.project_name='demoe' and a.visit_date between '2019-12-01' and '2019-12-
 and c.region_name='Midwest'
 and c.retailer_name='7 Eleven'
 and c.store_type_name='Supermarket'
+
+
+1.	SELECT count(distinct session_pk) FROM `trax-cpg-dwh-int.demo_masked.session_dim` a  
+2.	join `trax-cpg-dwh-int.demo_masked.kpi_fact` b on a.session_pk=b.session_fk and b.project_name='demoe'
+3.	where a.project_name='demoe' and a.visit_date between '2019-12-01' and '2019-12-31' and b.kpi_name='OOS - SKU'
+
